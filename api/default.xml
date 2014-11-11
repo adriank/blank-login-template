@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+			xmlns:mg="http://asyncode.com/Mongo"
+			xmlns:op="http://asyncode.com/Interpreter">
+
+	<param name="name" default="World"/>
+
+	<node name="who">Hello {$.name}!</node>
+
+</view>
