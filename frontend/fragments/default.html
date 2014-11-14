@@ -1,8 +1,8 @@
-<!-- Embed navbar under /fragments/navbar.html. We are keeping navbar in separate file due to it's size! -->
+<!-- Embed navbar under /fragments/navbar.html. We are keeping navbar in a separate file due to its size! -->
 <div ac-fragment="navbar" ac-condition="$._session.user.ID"></div>
 
 <!--
-	Create the main part. Content of this block changes after user clicks on links where ac-target attribute is '#main' (<a href="fragment" ac-target="#main">link</a>). More about links at http://blog.asyncode.com/post/101310416802/mastering-asyncode-html5-link-extensions.
+	Create the main part of the page. Contents of this block change after a user clicks on any link where ac-target attribute is '#main' (<a href="fragment" ac-target="#main">link</a>). More about links at http://blog.asyncode.com/post/101310416802/mastering-asyncode-html5-link-extensions.
 
 	The 'ac-condition' tells the framework to show the whole block only when condition is satisfied. Here it checks if user is logged in, by checking app data for value of $._session.user.ID. If it exists, user will see Hello World!, otherwise a login screen below.
 -->
