@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+			xmlns:u="http://asyncode.com/User"
+			xmlns:m="http://asyncode.com/Email"
+			xmlns:op="http://asyncode.com/Interpreter"
+			inherits="_settings_">
+
+	<post>
+		<param name="email" type="email"/>
+		<param name="password" type="nonEmpty"/>
+		<param name="r_password" type="nonEmpty"/>
+		<param name="name" type="nonEmpty"/>
+	</post>
+
+	<condition name="passwdCheck">$.password is $.r_password</condition>
+
+	<set name="userCreated"
+			 command="u:register"
+			 u:email="$.email"
+			 u:password="$.password"
+			 u:data="{'name':$.name}"
+	/>
+
+	<node name="userCreated" command="op:exec">
+		{"@status":$.userCreated.@status}+($.userCreated.@error and {"@error":$.userCreated.@error,"@message":$.userCreated.@message} or {})
+	</node>
+
+	<node name="sendMail"
+				command="m:send"
+				m:To="$.email"
+				m:Sender="'register@'+$.domainName"
+				m:From="'register@'+$.domainName"
+				m:Content-Type="'text/html; charset=utf-8'"
+				m:MIME-Version="'1.0'"
+				m:Subject="$.domainName+' - your account created!'"
+				condition="$.userCreated and not $.userCreated.@error">
+		<![CDATA[<b>Hi, {{$.name}},</b>
+		<h2>Congratulations! Your {{$.sysName}} account has been created!</h2>
+
+		<a href="//{{$env.domain}}/index.html#!main=/&main_ds=/user/approveEmail/{{$.userCreated.approvalKey}}/">Click here to verify your e-mail address and login.</a>]]>
+	{{$.emailFooter}}
+	</node>
+
+</view>

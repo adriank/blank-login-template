@@ -1,0 +1,46 @@
+<title>Register</title>
+<h2 class="form-signin-heading text-center">{{$.locale.register}}</h2>
+
+<form class="form-signin"
+			action="/user/create"
+			ac-redirect="/index.html">
+
+	<input name="name"
+				 class="input-block-level"
+				 type="text"
+				 placeholder="{{$.locale.name}}"
+				 autofocus
+				 required>
+	</input>
+
+	<input name="email"
+				 class="input-block-level"
+				 type="email"
+				 placeholder="{{$.locale.email}}"
+				 required>
+	</input>
+
+	<input name="password"
+				 class="input-block-level"
+				 type="password"
+				 placeholder="{{$.locale.password}}"
+				 required>
+	</input>
+
+	<input name="r_password"
+				 class="input-block-level"
+				 type="password"
+				 placeholder="{{$.locale.r_password}}"
+				 required>
+	</input>
+
+	<button class="btn btn-large btn-primary btn-block"
+					type="submit">
+		{{$.locale.register}}
+	</button>
+
+</form>
+
+<!-- Dirty hack to hide login form -->
+<style>body{overflow: hidden;}</style>
+<div style="height: 1000px;"></div>

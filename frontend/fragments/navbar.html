@@ -1,0 +1,75 @@
+<!--
+	This file contains standard Bootstrap navbar markup. It's painfully big, we know! Bootstrap team announced that they're working on a new simpler approach to do navbars in BS 4.0. We hope it will be nicer and promise to integrate it right away!
+
+	More at http://getbootstrap.com/components/#navbar
+
+	You can do the following here:
+	- replace [Your app name] with the name of your choice
+	- if you like to have menu on top, uncomment <li> at the end of this file (place cursor there and press ctrl+/ to uncomment),
+	- you can put as many <li>s as you like there and if the list becomes too big think about moving the less used to the dropdown.
+-->
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container-fluid">
+
+		<div id="user-settings" class="ac-popover pull-right">
+			<a href="#" class="mh16">
+				<i class="fa fa-user fa-white fa-2x"></i>
+			</a>
+			<div class="details hide">
+				<i class='online-indicator online'></i> {{$.user.name}}
+				<hr/>
+				<div class="pull-right">
+					<a href="/api/logout"
+					   class="text-danger">
+						<i class="fa fa-power-off"></i> {{$.locale.logOut}}
+					</a>
+				</div>
+				<div>
+					<a href="/users/settings" ac-target="#main">
+						<i class="fa fa-cog"></i> {{$.locale.userSettings}}
+					</a>
+				</div>
+			</div>
+		</div>
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/default" ac-target="#main">
+        [Your app name]
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+				<li>
+					<a href="/users/show"
+						 ac-target="#main"
+						 ac-dataSource="/users"
+						 ac-condition="$._session.user.ID">
+						<i class="fa fa-rocket fa-white"></i> Users
+					</a>
+				</li>
+				<!--<li class="dropdown">-->
+<!--					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>-->
+<!--          <ul class="dropdown-menu" role="menu">-->
+<!--            <li>-->
+<!--							<a href="/default"-->
+<!--								 ac-target="#main"-->
+<!--								 ac-dataSource="/default"-->
+<!--								 ac-condition="$._session.user.ID">-->
+<!--								<i class="fa fa-rocket fa-white"></i> My apps-->
+<!--							</a>-->
+<!--						</li>-->
+<!--          </ul>-->
+<!--        </li>-->
+			</ul>
+    </div>
+  </div>
+</nav>

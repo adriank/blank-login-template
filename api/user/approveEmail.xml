@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+			xmlns:u="http://asyncode.com/User">
+
+	<param name="ak" type="nonempty"/>
+
+	<node command="u:approveEmail" u:key="$.ak"/>
+
+</view>

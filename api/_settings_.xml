@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+			type="abstract">
+
+	<set name="domainName">adrian.asyncode.com</set>
+
+	<set name="sysName">Asyncode</set>
+
+	<set name="emailFooter">
+		<div style="background:#333; height:32px; width:100%; padding:16px;color:#fff;margin-top:64px;">
+			<div style="padding-top:10px;float:left;">Powered by <a href="http://asyncode.com/">Asyncode</a></div> <div style="float:right;margin-right:64px;"><img src="http://asyncode.com/img/ac-logo-16.png" height="16"/></div>
+		</div>
+	</set>
+
+</view>

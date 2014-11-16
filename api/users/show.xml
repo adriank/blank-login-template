@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+	xmlns:mg="http://asyncode.com/Mongo"
+	xmlns:op="http://asyncode.com/Interpreter"
+	inherits="_settings_">
+
+	<set name="userList"
+			 command="mg:find"
+			 mg:coll="users"
+			 mg:sort="sName"
+			 mg:direction="ascending">
+		{
+			"suspended": {
+				"$ne":true
+			}
+		}
+		<field name="role" show="t"/>
+		<field name="name" show="t"/>
+	</set>
+
+	<set name="role" path="$.userList" command="op:exec">
+		!.role is not 'admin' and ' ' or ", "+!.role
+	</set>
+
+	<node name="users" command="op:exec">
+		$.userList
+	</node>
+
+	<output format="json"/>
+
+</view>

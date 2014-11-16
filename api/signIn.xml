@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+	xmlns:u="http://asyncode.com/User"
+	xmlns:h="http://asyncode.com/Headers">
+
+	<post>
+	  <param name="email" type="email"/>
+		<param name="password"/>
+	</post>
+
+	<node name="loggedIn"
+				command="u:login"
+				u:email="$.email"
+				u:password="$.password"
+				condition="not $ss.ID"/>
+
+</view>
