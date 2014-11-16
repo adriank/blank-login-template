@@ -6,9 +6,8 @@
 
 	<set name="userList"
 			 command="mg:find"
-			 mg:coll="users"
-			 mg:sort="sName"
-			 mg:direction="ascending">
+			 mg:coll="users">
+			 <!--mg:sort="name">-->
 		{
 			"suspended": {
 				"$ne":true

@@ -7,4 +7,11 @@
 
 	<node name="who">Hello {$.name}!</node>
 
+	<node name="user"
+			 command="mg:findOne"
+			 mg:coll="users"
+			 mg:show="name, email">
+		{_id: $ss.ID}
+	</node>
+
 </view>
