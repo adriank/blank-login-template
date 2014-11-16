@@ -1,1 +1,36 @@
-{}
+{
+	"pageTitle":"test!",
+	"userSettings":"Settings",
+	"basicSettings":"Basic",
+	"contactSettings":"Contact",
+	"basicContactInfo":"Basic contact info",
+	"socialMedia":"Social media",
+	"telephone":"Telephone",
+	"IM":"Instant messaging",
+	"userName":"User name",
+	"links":"Links",
+	"users":"Users",
+	"newUser":"New user",
+	"name":"Name",
+	"email":"Email",
+	"password":"Password",
+	"r_password":"Repeat password",
+	"logIn":"Log in",
+	"logOut":"Log out",
+	"password":"Password",
+	"register":"Register",
+	"save":"Save",
+	"registerNew":"Register a new user",
+	"accountSettings":"Account settings",
+	"suspendUser":"Suspend the account",
+	"day":"Day",
+	"start":"Start",
+	"end":"End",
+	"aboutMe":"About me",
+	"profileOf":"User profile",
+	"config":"App settings",
+
+	"appSettings":"App settings",
+
+	"noLocaleString":"No string locale for English available"
+}
