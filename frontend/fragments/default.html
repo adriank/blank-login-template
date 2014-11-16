@@ -1,10 +1,10 @@
-<!-- Embed navbar under /fragments/navbar.html. We are keeping navbar in separate file due to it's size! -->
+<!-- Embed navbar under /fragments/navbar.html. We are keeping navbar in a separate file due to its size! -->
 <div ac-fragment="navbar" ac-condition="$._session.user.ID"></div>
 
 <!--
-	Create the main part. Content of this block changes after user clicks on links where ac-target attribute is '#main' (<a href="fragment" ac-target="#main">link</a>). More about links at http://blog.asyncode.com/post/101310416802/mastering-asyncode-html5-link-extensions.
+	Create the main part of the page. Contents of this block change when the user clicks on any link where ac-target attribute is '#main' (<a href="fragment" ac-target="#main">link</a>). More on how links work at http://blog.asyncode.com/post/101310416802/mastering-asyncode-html5-link-extensions.
 
-	The 'ac-condition' tells the framework to show the whole block only when condition is satisfied. Here it checks if user is logged in, by checking app data for value of $._session.user.ID. If it exists, user will see Hello World!, otherwise a login screen below.
+'ac-condition' tells the framework to show the whole block only when a given condition is satisfied. Here it checks if the user is logged in, by checking app data for the value of $._session.user.ID. If it exists, the user will see Hello World!, otherwise the user will se the login screen below.
 -->
 <div id="main" class="container-fluid">
 	<div ac-condition="$._session.user.ID">
@@ -13,11 +13,11 @@
 </div>
 
 <!--
-ac-condition again. 'not' negates the result so that block is rendered only when user is not logged in.
+ac-condition again. 'not' negates the result so that the block is rendered only when the user is not logged in.
 
-The login markup is taken from http://getbootstrap.com/getting-started/#examples. You can find there other nice templates to just copy and paste into Asyncode Platform!
+The login markup comes from http://getbootstrap.com/getting-started/#examples. You can find there many other nice templates to just copy and paste into Asyncode Platform's IDE!
 
-On top of plain HTML, we have one additional Asyncode specific <form> attributes, ac-redirect. You probably won't use it elsewhere in your apps, because it indicates total refresh of the page after form was successfully sent.
+On top of plain HTML, there is one additional Asyncode-specific <form> attribute, ac-redirect. You probably won't use it elsewhere in your apps, because it indicates total refresh of the page after a form has been successfully sent.
 -->
 <div id="login" ac-condition="not $._session.user.ID">
 	<form class="form-signin"
