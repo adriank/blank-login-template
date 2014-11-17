@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<view xmlns="http://asyncode.com/View"
-			xmlns:h="http://asyncode.com/Headers">
+<view xmlns="http://asyncode.com/View">
 
 	<param name="ak" type="nonempty"/>
 

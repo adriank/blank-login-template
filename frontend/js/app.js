@@ -9,7 +9,8 @@ $(document).ready(function(){
 				html:true,
 				placement:"bottom",
 				content:$(this).find(".details").html(),
-				container: "#"+id+"-popover"
+				container: "#"+id+"-popover",
+				trigger:"hover"
 			})
 			var self=$(this)
 			$("#"+id+"-popover").blur(function(e){

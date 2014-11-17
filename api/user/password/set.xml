@@ -39,8 +39,4 @@
 		}
 	</node>
 
-	<!--<set name="redirect"-->
-	<!--		 command="h:redirect"-->
-	<!--		 h:location="'/login'"/>-->
-
 </view>

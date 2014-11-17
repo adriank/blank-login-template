@@ -12,7 +12,7 @@
   <div class="container-fluid">
 
 		<div id="user-settings" class="ac-popover pull-right">
-			<a href="#" class="mh16">
+			<a href="#" tabindex="0" class="mh16">
 				<i class="fa fa-user fa-white fa-2x"></i>
 			</a>
 			<div class="details hide">
@@ -48,15 +48,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
-				<li>
-					<a href="/users/show"
-						 ac-target="#main"
-						 ac-dataSource="/users/show"
-						 ac-condition="$._session.user.ID">
-						<i class="fa fa-users fa-white"></i> Users
-					</a>
-				</li>
-				<!--<li class="dropdown">-->
+<!--				<li>-->
+<!--					<a href="/default"-->
+<!--						 ac-target="#main"-->
+<!--						 ac-dataSource="/default">-->
+<!--						<i class="fa fa-users fa-white"></i> My nav-->
+<!--					</a>-->
+<!--				</li>-->
+<!--				<li class="dropdown">-->
 <!--					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>-->
 <!--          <ul class="dropdown-menu" role="menu">-->
 <!--            <li>-->
@@ -64,7 +63,7 @@
 <!--								 ac-target="#main"-->
 <!--								 ac-dataSource="/default"-->
 <!--								 ac-condition="$._session.user.ID">-->
-<!--								<i class="fa fa-rocket fa-white"></i> My apps-->
+<!--								<i class="fa fa-rocket fa-white"></i> My menu item-->
 <!--							</a>-->
 <!--						</li>-->
 <!--          </ul>-->

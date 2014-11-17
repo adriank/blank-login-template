@@ -38,7 +38,7 @@
 				m:Content-Type="'text/html; charset=utf-8'"
 				m:MIME-Version="'1.0'"
 				m:Subject="$.sysName+' - reset your password!'"><![CDATA[Hello, {{$.email}}
-<p>Click <a href="http://{{$env.domain}}/index.html#!main=/users/setPassword&main_ds=user/password/reset/{{$.key}}/" title="reset password">here</a> to reset your password.</p>]]>
+<p>Click <a href="http://{{$env.domain}}/index.html#!main=/user/setPassword&main_ds=user/password/reset/{{$.key}}/" title="reset password">here</a> to reset your password.</p>]]>
 	{{$.emailFooter}}
 	</node>
 

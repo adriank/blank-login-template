@@ -8,7 +8,7 @@
 
 	<set name="emailFooter">
 		<div style="background:#333; height:32px; width:100%; padding:16px;color:#fff;margin-top:64px;">
-			<div style="padding-top:10px;float:left;">Powered by <a href="http://asyncode.com/">Asyncode</a></div> <div style="float:right;margin-right:64px;"><img src="http://asyncode.com/img/ac-logo-16.png" height="16"/></div>
+			<div style="padding-top:10px;float:left;">Powered by <a href="http://asyncode.com/">Asyncode</a></div> <div style="float:right;margin-right:40px;;margin-top: 8px;"><img src="http://asyncode.com/img/ac-logo-16.png" height="16"/></div>
 		</div>
 	</set>
 
