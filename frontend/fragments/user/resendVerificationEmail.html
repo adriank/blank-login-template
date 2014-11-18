@@ -1,0 +1,30 @@
+<title>Register</title>
+<h2 class="form-signin-heading text-center">Resend verification e-mail</h2>
+
+<form class="form-signin"
+			action="/user/resendVerificationEmail"
+			ac-redirect="/index.html">
+
+	<span class="help-block">Provide e-mail address that you created account with.</span>
+
+	<input name="email"
+				 class="input-block-level"
+				 type="email"
+				 placeholder="{{$.locale.email}}"
+				 required>
+	</input>
+
+	<button class="btn btn-large btn-primary btn-block"
+					type="submit">
+		Send
+	</button>
+
+	<div class="alert alert-danger ac-error UserNotFound">
+		<i class="fa fa-warning"></i> Provided E-mail address doesn't match any account.
+	</div>
+
+</form>
+
+<!-- Dirty hack to hide login form -->
+<style>body{overflow: hidden;}</style>
+<div style="height: 1000px;"></div>

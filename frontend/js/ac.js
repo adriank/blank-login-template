@@ -189,12 +189,12 @@ $(document).ready(function(){
 						}
 					},
 					error:function(e){
-						console.log(e)
 						ret={
 							"@status":"error",
-							"@message":"API call was set up but was unsuccessful: "
+							"@error":"BackendNotResponding",
+							"@message":"API call to "+URL+" was not successful!"
 						}
-						//console.error("API call to "+URL+" was not successful!")
+						if (D) console.error("API call to "+URL+" was not successful!")
 					},
 					dataType:"json",
 					async:false
@@ -339,6 +339,7 @@ $(document).ready(function(){
 		}
 		locationHash.hashChangeSource=null
 	}
+
 	window.onload=refreshState
 
 	$("body").on("click","a, button",function(e){
@@ -420,13 +421,15 @@ $(document).ready(function(){
 
 		if (!targetEl) {
 			$.ajax({
-				url: "/api"+self.attr("action"),
+				url: ac.fixAPIURL(self.attr("action")),
 				data: self.serialize(),
 				success: function(e) {
 					var error=false
 					for(var key in e){
 						if (e[key]["@status"]==="error") {
 							error=e[key]["@message"] || e[key]["@error"]
+							var errorDiv=btn.parents("form").find(".ac-error."+e[key]["@error"])
+							if (errorDiv) errorDiv.addClass("show")
 							break
 						}
 					}
@@ -472,7 +475,7 @@ $(document).ready(function(){
 			t.attr(PREFIX+"-fragment",href)
 			t.attr(PREFIX+"-dataSource",self.attr(PREFIX+"-dataSource"))
 			$.ajax({
-				url: "/api"+self.attr("action"),
+				url: ac.fixAPIURL(self.attr("action")),
 				data: self.serialize(),
 				success: function(e) {
 					removeSpinner(btn)

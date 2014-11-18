@@ -5,6 +5,8 @@
 
 	<param name="name" default="World"/>
 
+	<condition name="NotLoggedIn">$ss.loggedIn</condition>
+
 	<node name="who">Hello {$.name}!</node>
 
 	<node name="user"

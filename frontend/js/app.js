@@ -10,7 +10,7 @@ $(document).ready(function(){
 				placement:"bottom",
 				content:$(this).find(".details").html(),
 				container: "#"+id+"-popover",
-				trigger:"hover"
+				trigger:"focus"
 			})
 			var self=$(this)
 			$("#"+id+"-popover").blur(function(e){

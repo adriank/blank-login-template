@@ -4,7 +4,7 @@
 			xmlns:m="http://asyncode.com/Email"
 			xmlns:op="http://asyncode.com/Interpreter"
 			inherits="_settings_">
-
+`
 	<post>
 		<param name="email" type="email"/>
 		<param name="password" type="nonEmpty"/>
@@ -28,11 +28,11 @@
 	<node name="sendMail"
 				command="m:send"
 				m:To="$.email"
-				m:Sender="'register@'+$.domainName"
+				m:Sender="'register@'+$.domainName+'>'"
 				m:From="'register@'+$.domainName"
 				m:Content-Type="'text/html; charset=utf-8'"
 				m:MIME-Version="'1.0'"
-				m:Subject="$.domainName+' - your account created!'"
+				m:Subject="$.sysName+' - verify your e-mail address!'"
 				condition="$.userCreated and not $.userCreated.@error">
 		<![CDATA[<b>Hi, {{$.name}},</b>
 		<h2>Congratulations! Your {{$.sysName}} account has been created!</h2>

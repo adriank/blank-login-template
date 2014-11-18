@@ -36,6 +36,17 @@ On top of plain HTML, there is one additional Asyncode-specific <form> attribute
            placeholder="Password"
            required>
 		<button class="btn btn-large btn-primary btn-block" type="submit">Log in</button>
+
+		<div class="alert alert-danger ac-error EmailAddressNotVerified">
+			<i class="fa fa-warning"></i> <b>E-mail address not verified</b>
+			<p>Your e-mail address is not verified. Check your mailbox and spam folder or <a href="/user/resendVerificationEmail" ac-target="#main">resend verification e-mail</a>.</p>
+		</div>
+
+		<div class="alert alert-danger ac-error AccountNotFound">
+			<i class="fa fa-warning"></i> <b>Account not found</b>
+			<p>Register below or contact support.</p>
+		</div>
+
 	</form>
 
 	<!-- data-toggle is a bootstrap extension, more on http://getbootstrap.com/javascript/#modals. -->
@@ -51,7 +62,7 @@ On top of plain HTML, there is one additional Asyncode-specific <form> attribute
 		After user clicks on the link, the sign in form is replaced by contents of /fragments/users/register.html.
 	-->
 	<div class="center-block" style="width: 100px;">
-		<a href="/users/register" ac-target="#main" class="btn btn-success btn-lg">Register</a>
+		<a href="/user/register" ac-target="#main" class="btn btn-success btn-lg">Register</a>
 	</div>
 
 	<!-- Nothing new here -->

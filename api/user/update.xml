@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <view xmlns="http://asyncode.com/View"
 	xmlns:mg="http://asyncode.com/Mongo"
-	xmlns:op="http://asyncode.com/interpreter"
-	xmlns:h="http://asyncode.com/Headers">
+	xmlns:op="http://asyncode.com/interpreter">
 
 	<condition>$ss.loggedIn</condition>
 
@@ -14,8 +13,10 @@
 		<param name="linkedin"/>
 	</post>
 
-	<set name="updateUser" command="mg:update" mg:coll="users">
-		<where>{"_id":$ss.ID}}</where>
+	<set name="updateUser"
+			 command="mg:update"
+			 mg:coll="users">
+		<where>{"_id":$ss.ID}</where>
 		{
 			"$set":{
 				"name":$.name,

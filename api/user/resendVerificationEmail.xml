@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://asyncode.com/View"
+			xmlns:mg="http://asyncode.com/Mongo"
+			xmlns:m="http://asyncode.com/Email"
+			xmlns:op="http://asyncode.com/Interpreter"
+			inherits="_settings_">
+
+	<post>
+		<param name="email" type="email"/>
+	</post>
+
+	<set name="user"
+			 command="mg:findOne"
+			 mg:coll="users"
+			 mg:show="[approvalKey,name]">
+		{"email":$.email}
+	</set>
+
+	<node name="error" command="op:exec" condition="not $.user">
+		{
+			"@status":"error",
+			"@error":"UserNotFound"
+		}
+	</node>
+
+	<node name="sendMail"
+				command="m:send"
+				m:To="$.email"
+				m:Sender="'register@'+$.domainName+'>'"
+				m:From="'register@'+$.domainName"
+				m:Content-Type="'text/html; charset=utf-8'"
+				m:MIME-Version="'1.0'"
+				m:Subject="$.sysName+' - verify your e-mail address!'"
+				condition="$.user">
+		<![CDATA[<b>Hi, {{$.user.name}},</b>
+		<h2>Congratulations! Your {{$.sysName}} account has been created!</h2>
+
+		<a href="//{{$env.domain}}/index.html#!main=/&main_ds=/user/approveEmail/{{$.user.approvalKey}}/">Click here to verify your e-mail address and login.</a>]]>
+	{{$.emailFooter}}
+	</node>
+
+</view>
