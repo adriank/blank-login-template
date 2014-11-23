@@ -18,6 +18,8 @@ ac-condition again. 'not' negates the result so that the block is rendered only 
 The login markup comes from http://getbootstrap.com/getting-started/#examples. You can find there many other nice templates to just copy and paste into Asyncode Platform's IDE!
 
 On top of plain HTML, there is one additional Asyncode-specific <form> attribute, ac-redirect. You probably won't use it elsewhere in your apps, because it indicates total refresh of the page after a form has been successfully sent.
+
+Form data is sent to the backend which raise various error messages when something went wrong. We can show user friendly messages simply by including <div class="ac-error ErrorName"> block anywhere inside the <form>. Errors will be automatically shown when submitting form ends up with an error.
 -->
 <div id="login" ac-condition="not $._session.user.ID">
 	<form class="form-signin"
