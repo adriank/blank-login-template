@@ -35,7 +35,7 @@
 		<![CDATA[<b>Hi, {{$.user.name}},</b>
 		<h2>Congratulations! Your {{$.sysName}} account has been created!</h2>
 
-		<a href="//{{$env.domain}}/index.html#!main=/&main_ds=/user/approveEmail/{{$.user.approvalKey}}/">Click here to verify your e-mail address and login.</a>]]>
+		<a href="http://{{$env.domain}}/index.html#!main=/&main_ds=/user/approveEmail/{{$.user.approvalKey}}/">Click here to verify your e-mail address and login.</a>]]>
 	{{$.emailFooter}}
 	</node>
 

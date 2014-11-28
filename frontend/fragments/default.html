@@ -4,10 +4,10 @@
 <!--
 	Create the main part of the page. Contents of this block change when the user clicks on any link where ac-target attribute is '#main' (<a href="fragment" ac-target="#main">link</a>). More on how links work at http://blog.asyncode.com/post/101310416802/mastering-asyncode-html5-link-extensions.
 
-'ac-condition' tells the framework to show the whole block only when a given condition is satisfied. Here it checks if the user is logged in, by checking app data for the value of $._session.user.ID. If it exists, the user will see Hello World!, otherwise the user will se the login screen below.
+'ac-showWhen' tells the framework to show the whole block only when a given condition is satisfied. Here it checks if the user is logged in, by checking app data for the value of $._session.user.ID. If it exists, the user will see Hello World!, otherwise the user will se the login screen below.
 -->
 <div id="main" class="container-fluid">
-	<div ac-condition="$._session.user.ID">
+	<div ac-showWhen="$._session.user.ID">
 		Hello, World!
 	</div>
 </div>
@@ -21,7 +21,7 @@ On top of plain HTML, there is one additional Asyncode-specific <form> attribute
 
 Form data is sent to the backend which raise various error messages when something went wrong. We can show user friendly messages simply by including <div class="ac-error ErrorName"> block anywhere inside the <form>. Errors will be automatically shown when submitting form ends up with an error.
 -->
-<div id="login" ac-condition="not $._session.user.ID">
+<div id="login" ac-showWhen="not $._session.user.ID">
 	<form class="form-signin"
 				action="/signIn"
 				ac-redirect="/index.html">
